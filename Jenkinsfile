@@ -1,8 +1,11 @@
 node{
-stage('scm,{
+stage('scm'{
+ def mvnHome= tool name: '', type: 'maven'
+  
 git 'https://github.com/PoojaJoshi1102/Demo'
 }
 stage('compile-package'){
-sh 'maven package'
+   def mvnHome= tool name: '', type: 'maven'
+  sh "${mvnHome}/bin/mvn package
 }
 }
